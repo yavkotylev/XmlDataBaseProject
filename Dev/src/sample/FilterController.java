@@ -1,23 +1,15 @@
 package sample;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
+import sample.database.Getter;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class FilterController {
+    private final Getter dbGetter = new Getter();
 
     @FXML
     private TextField authorField;
@@ -59,7 +51,7 @@ public class FilterController {
         System.out.println(query);
 
         try {
-            String result =  DBWorker.queryResult(query);
+            String result = "lpl";// dbGetter.queryResult(query);
             System.out.println("RESULT:");
             System.out.println(result);
 
@@ -73,7 +65,7 @@ public class FilterController {
     }
 
     private String queryString(String title, String author, String from, String to, String types) {
-        String query = readLineByLineJava8("Queries/Filter.xq");
+        String query = ";e;";//dbGetter readLineByLineJava8("Queries/Filter.xq");
         if (from.isEmpty()) {
             from = "0";
         }
@@ -103,19 +95,5 @@ public class FilterController {
         }
 
         return types;
-    }
-
-    private String readLineByLineJava8(String filePath)
-    {
-        StringBuilder contentBuilder = new StringBuilder();
-        try (Stream<String> stream = Files.lines( Paths.get(filePath), StandardCharsets.UTF_8))
-        {
-            stream.forEach(s -> contentBuilder.append("\n").append(s));
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-        return contentBuilder.toString().trim();
     }
 }

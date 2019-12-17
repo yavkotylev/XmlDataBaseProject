@@ -7,8 +7,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import sample.database.DBWorker;
+import sample.database.Getter;
 
-public class Controller implements Initializable {
+public class UpdateController implements Initializable {
+
+    private final DBWorker dbWorker = new DBWorker();
+    private final Getter getter = new Getter();
     //Author textFields
     @FXML
     private TextField deleteAuthorName;
@@ -21,7 +26,7 @@ public class Controller implements Initializable {
 
     //Title textFields
     @FXML
-    private TextField mainTitle;
+    private TextField mainTitleName;
     @FXML
     private TextField newTitleName;
     @FXML
@@ -47,7 +52,7 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    private Button updateAuthorName;
+    private Button updateAuthor;
 
     public void updateAuthorClicked(ActionEvent event) {
         System.out.println("Old name = " + oldAuthorName.getText() + "\nNew name = " + newAuthorName.getText());
@@ -58,7 +63,7 @@ public class Controller implements Initializable {
     private Button deleteTitle;
 
     public void deleteTitleClicked(ActionEvent event) {
-        System.out.println(mainTitle.getText());
+        System.out.println(getter.findPublicationByTitle(mainTitleName.getText()).getResult());
     }
 
     @FXML
@@ -72,7 +77,11 @@ public class Controller implements Initializable {
     private Button updateTitle;
 
     public void updateTitleClicked(ActionEvent event) {
-        System.out.println(updateTitleName.getText());
+        String oldName = mainTitleName.getText();
+        String newName = updateTitleName.getText();
+        if (!Utils.isBlank(oldName) && !Utils.isBlank(newName)) {
+            //dbWorker.updateTitle(oldName, newName);
+        }
     }
 
     @Override

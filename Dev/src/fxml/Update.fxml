@@ -8,11 +8,11 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import java.lang.String?>
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="sample.Controller">
+      fx:controller="sample.UpdateController">
     <children>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <children>
-                <TextField fx:id="mainTitle" layoutX="141.0" layoutY="77.0" prefHeight="27.0" prefWidth="249.0"/>
+                <TextField fx:id="mainTitleName" layoutX="141.0" layoutY="77.0" prefHeight="27.0" prefWidth="249.0"/>
                 <Label layoutX="14.0" layoutY="53.0"/>
                 <Button fx:id="deleteAuthor" onAction="#deleteAuthor" layoutX="197.0" layoutY="164.0"
                         mnemonicParsing="false" text="Delete author"/>
