@@ -51,7 +51,7 @@ public class UpdateController implements Initializable {
     }
 
     public void deleteTitleClicked(ActionEvent event) {
-        System.out.println(getter.findPublicationByTitle(mainTitleName.getText()).getResult());
+        System.out.println(getter.getAuthorsWithNumberOfPublication());
     }
 
     public void addTitleClicked(ActionEvent event) {

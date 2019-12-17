@@ -26,4 +26,9 @@ public class Getter {
         String query = String.format(fileLines, title, author, from, to, types);
         return dbWorker.query(query);
     }
+
+    public Result getAuthorsWithNumberOfPublication() {
+        String fileLines = dbWorker.readLineByLineJava8("GetAuthorsByNumberOfPublications.xq");
+        return dbWorker.query(fileLines);
+    }
 }
