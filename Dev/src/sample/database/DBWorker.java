@@ -51,4 +51,12 @@ public class DBWorker {
         }
         return contentBuilder.toString().trim();
     }
+
+    public void setContextAsWritable() {
+        try {
+            context.options.assign("WRITEBACK", "true");
+        } catch (Exception e) {
+            System.out.println("Error with context");
+        }
+    }
 }
