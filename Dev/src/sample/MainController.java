@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class MainController {
@@ -30,6 +31,20 @@ public class MainController {
             Stage stage = new Stage();
             stage.setTitle("Filter");
             stage.setScene(new Scene(root, 600, 600));
+            stage.show();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void topClicked(ActionEvent event) {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("../fxml/Chart.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Top authors");
+            stage.setScene(new Scene(root, 700, 700));
             stage.show();
         }
         catch (IOException e) {

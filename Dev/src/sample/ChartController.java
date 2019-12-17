@@ -22,7 +22,7 @@ public class ChartController implements Initializable {
         int value;
 
         Item(String row) throws Exception {
-            String[] ar = row.split(" ");
+            String[] ar = row.split("-----");
             if (ar.length != 2) {
                 throw new IllegalArgumentException();
             }
@@ -60,7 +60,13 @@ public class ChartController implements Initializable {
             try {
                 Item item = new Item(text);
                 result.add(item);
-            } catch(Exception e) {}
+
+                if (result.size() == 10) {
+                    return result;
+                }
+            } catch(Exception e) {
+                System.out.println(e.getLocalizedMessage());
+            }
         }
 
         return result;
