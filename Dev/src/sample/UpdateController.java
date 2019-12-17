@@ -34,14 +34,9 @@ public class UpdateController implements Initializable {
     @FXML
     private TextField mainTitleName;
     @FXML
-    private TextField newTitleName;
-    @FXML
     private TextField updateTitleName;
     @FXML
     private TextArea updatedPublication;
-
-    @FXML
-    private ChoiceBox<String> typesChoiceBox;
 
     public void deleteAuthor(ActionEvent event) {
         String author = deleteAuthorName.getText();
@@ -73,7 +68,16 @@ public class UpdateController implements Initializable {
         if (!isMainTitleNameFilled()) {
             return;
         }
-        setUpdatedPublication(mainTitleName.getText(), "Publication with new author:");
+        Result result = dbUpdater.addAuthor(newAuthor, mainTitleName.getText());
+        switch (result.getStatus()) {
+            case SUCCESS:
+            case EMPTY:
+                setUpdatedPublication(mainTitleName.getText(), "Publication with new author:");
+                break;
+            case ERROR:
+                setInfo("Error:\n" + result.getError());
+        }
+
     }
 
     public void updateAuthorClicked(ActionEvent event) {
@@ -113,9 +117,6 @@ public class UpdateController implements Initializable {
         }
     }
 
-    public void addTitleClicked(ActionEvent event) {
-        System.out.println(newTitleName.getText() + " " + typesChoiceBox.getValue());
-    }
 
     public void updateTitleClicked(ActionEvent event) {
         String oldTitle = mainTitleName.getText();
@@ -158,5 +159,4 @@ public class UpdateController implements Initializable {
         }
         return true;
     }
-
 }

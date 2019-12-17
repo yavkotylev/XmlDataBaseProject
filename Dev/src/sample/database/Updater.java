@@ -36,4 +36,11 @@ public class Updater {
         dbWorker.setContextAsWritable();
         return dbWorker.query(query);
     }
+
+    public Result addAuthor(String author, String title) {
+        String fileLines = dbWorker.readLineByLineJava8("AddAuthor.xq");
+        String query = String.format(fileLines, author, title);
+        dbWorker.setContextAsWritable();
+        return dbWorker.query(query);
+    }
 }
