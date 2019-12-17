@@ -29,10 +29,13 @@ public class DBWorker {
         try {
             String res = new XQuery(query).execute(context);
             if (Utils.isBlank(res)) {
+                System.out.println("Empty result!");
                 return new Result(Result.Status.EMPTY, null, null);
             }
+            System.out.println("Executed successfully with res:\n " + res);
             return new Result(Result.Status.SUCCESS, res);
         } catch (Exception e) {
+            System.out.println("Executed with error:\n " + e.toString());
             return new Result(Result.Status.ERROR, null, e.toString());
         }
     }
