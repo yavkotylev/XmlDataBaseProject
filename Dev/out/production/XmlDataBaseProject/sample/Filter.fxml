@@ -57,10 +57,10 @@
       <children>
             <Button layoutX="26.0" layoutY="331.0" mnemonicParsing="false" onAction="#searchClicked" prefHeight="27.0" prefWidth="197.0" text="Найти" />
             <Label layoutX="38.0" layoutY="34.0" text="Title" />
-            <CheckBox layoutX="26.0" layoutY="230.0" mnemonicParsing="false" text="Bachelor Thesis" />
-            <CheckBox layoutX="26.0" layoutY="200.0" mnemonicParsing="false" text="Master Thesis" />
-            <CheckBox layoutX="27.0" layoutY="263.0" mnemonicParsing="false" text="Article" />
-            <CheckBox layoutX="26.0" layoutY="296.0" mnemonicParsing="false" text="WWW" />
+            <CheckBox fx:id="bachelorBox" layoutX="26.0" layoutY="230.0" mnemonicParsing="false" text="Bachelor Thesis" />
+            <CheckBox fx:id="masterBox" layoutX="26.0" layoutY="200.0" mnemonicParsing="false" text="Master Thesis" />
+            <CheckBox fx:id="articleBox" layoutX="27.0" layoutY="263.0" mnemonicParsing="false" text="Article" />
+            <CheckBox fx:id="wwwBox" layoutX="26.0" layoutY="296.0" mnemonicParsing="false" text="WWW" />
             <BorderPane layoutX="272.0" prefHeight="372.0" prefWidth="355.0" />
             <Label layoutX="37.0" layoutY="68.0" text="Author" />
             <TextField fx:id="titleField" layoutX="86.0" layoutY="29.0" />

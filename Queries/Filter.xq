@@ -1,8 +1,8 @@
-let $author := ""
-let $types := ()
-let $title := ""
-let $from := 1994
-let $to := 1994
+let $title := "%s"
+let $author := "%s"
+let $from := %s
+let $to := %s
+let $types := (%s)
 
 let $items := (for $item in doc("dblp-2019-12-01")/*/*
 where 
@@ -13,5 +13,4 @@ where
   ($item/year<=$to or $to = 0)
 return $item)
 
-for $item in $items
-return $item
+return $items
