@@ -1,4 +1,4 @@
-/.idea/*
-/out/
+/.idea/
+/out
 Dev.iml
-Dev/.idea/workspace.xml
+.idea/workspace.xml
