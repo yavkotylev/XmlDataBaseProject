@@ -29,7 +29,7 @@
                 <TextField fx:id="newAuthorName" layoutX="98.0" layoutY="303.0"/>
                 <Label layoutX="14.0" layoutY="82.0" text="Updates for title"/>
                 <Button layoutX="421.0" layoutY="77.0" mnemonicParsing="false" onAction="#deleteTitleClicked"
-                        text="Delete title"/>
+                        text="Delete publication by title"/>
                 <Button layoutX="436.0" layoutY="26.0" mnemonicParsing="false" onAction="#addTitleClicked"
                         text="Add new title"/>
                 <TextField fx:id="newTitleName" layoutX="15.0" layoutY="26.0" prefHeight="27.0" prefWidth="249.0"/>
@@ -41,7 +41,6 @@
                     </items>
                 </ChoiceBox>
                 <TextArea fx:id="updatedPublication" editable="false" layoutX="354.0" layoutY="354.0" prefHeight="131.0" prefWidth="278.0"/>
-                <Label layoutX="211.0" layoutY="403.0" text="Updated publication"/>
             </children>
         </AnchorPane>
     </children>
