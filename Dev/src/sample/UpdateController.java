@@ -2,6 +2,7 @@ package sample;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import sample.Utils.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import sample.database.DBWorker;
 import sample.database.Getter;
+
+import static sample.Utils.isBlank;
 
 public class UpdateController implements Initializable {
 
@@ -32,54 +35,33 @@ public class UpdateController implements Initializable {
     @FXML
     private TextField updateTitleName;
 
-    //MenuButton
     @FXML
     private ChoiceBox<String> typesChoiceBox;
-
-    //Author buttons
-    @FXML
-    private Button deleteAuthor;
 
     public void deleteAuthor(ActionEvent event) {
         System.out.println(deleteAuthorName.getText());
     }
 
-    @FXML
-    private Button addAuthor;
-
     public void addAuthorClicked(ActionEvent event) {
         System.out.println(addAuthorName.getText());
     }
-
-    @FXML
-    private Button updateAuthor;
 
     public void updateAuthorClicked(ActionEvent event) {
         System.out.println("Old name = " + oldAuthorName.getText() + "\nNew name = " + newAuthorName.getText());
     }
 
-    //Title buttons
-    @FXML
-    private Button deleteTitle;
-
     public void deleteTitleClicked(ActionEvent event) {
         System.out.println(getter.findPublicationByTitle(mainTitleName.getText()).getResult());
     }
-
-    @FXML
-    private Button addTitle;
 
     public void addTitleClicked(ActionEvent event) {
         System.out.println(newTitleName.getText() + " " + typesChoiceBox.getValue());
     }
 
-    @FXML
-    private Button updateTitle;
-
     public void updateTitleClicked(ActionEvent event) {
         String oldName = mainTitleName.getText();
         String newName = updateTitleName.getText();
-        if (!Utils.isBlank(oldName) && !Utils.isBlank(newName)) {
+        if (!isBlank(oldName) && !isBlank(newName)) {
             //dbWorker.updateTitle(oldName, newName);
         }
     }

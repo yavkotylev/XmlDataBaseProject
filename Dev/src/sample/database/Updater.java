@@ -1,6 +1,6 @@
 package sample.database;
 
-import org.basex.core.Context;
+import sample.Utils.Result;
 
 public class Updater {
     private final DBWorker dbWorker;

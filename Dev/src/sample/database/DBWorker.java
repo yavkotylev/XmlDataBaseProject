@@ -3,13 +3,15 @@ package sample.database;
 
 import org.basex.core.*;
 import org.basex.core.cmd.*;
-import sample.Utils;
+import sample.Utils.*;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
+
+import static sample.Utils.isBlank;
 
 /**
  * This example demonstrates three variants how XQuery expressions can be
@@ -28,7 +30,7 @@ public class DBWorker {
         System.out.println("Start execute:\n" + query);
         try {
             String res = new XQuery(query).execute(context);
-            if (Utils.isBlank(res)) {
+            if (isBlank(res)) {
                 System.out.println("Empty result!");
                 return new Result(Result.Status.EMPTY, null, null);
             }
