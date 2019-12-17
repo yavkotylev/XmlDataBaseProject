@@ -3,10 +3,9 @@ package sample.database;
 import org.basex.core.Context;
 
 public class Updater {
-    private final Context context  = DBWorker.context;
     private final DBWorker dbWorker;
 
-    public Updater(Context context) {
+    public Updater() {
         this.dbWorker = new DBWorker();
     }
 
