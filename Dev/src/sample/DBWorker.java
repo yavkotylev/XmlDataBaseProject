@@ -35,13 +35,13 @@ public class DBWorker {
         System.out.println("=== RunQueries ===");
 
         // Evaluate the specified XQuery
-        String query = "let $pub := doc('src/resources/xml/dblp.xml')/*/article[1]/author[1]\n" +
+        String query = "let $pub := doc('Dev/src/resources/xml/dblp.xml')/*/article[1]/author[1]\n" +
                 "return $pub";
 
         // Process the query by using the database command
         System.out.println("\n* Use the database command:");
 
-        iterate(query);
+        query(query);
     }
 
     /**
@@ -53,6 +53,10 @@ public class DBWorker {
      */
     static void query(final String query) throws BaseXException {
         System.out.println(new XQuery(query).execute(context));
+    }
+
+    static String queryResult(final String query) throws BaseXException {
+        return new XQuery(query).execute(context);
     }
 
     /**
@@ -90,7 +94,7 @@ public class DBWorker {
 
             // Iterate through all items and serialize
             for (Item item; (item = iter.next()) != null; ) {
-                System.out.println(item);
+                System.out.println(item.toString());
                 System.out.println(item.toJava());
             }
         }
