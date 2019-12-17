@@ -43,7 +43,8 @@ public class FilterController {
     @FXML
     private CheckBox articleBox;
 
-
+    @FXML
+    private TextArea resultArea;
 
     public void searchClicked(ActionEvent event) {
         String title = titleField.getText();
@@ -58,14 +59,27 @@ public class FilterController {
         System.out.println(query);
 
         try {
-            System.out.println(DBWorker.queryResult(query));
+            String result =  DBWorker.queryResult(query);
+            System.out.println("RESULT:");
+            System.out.println(result);
+
+            resultArea.setText(result);
+
         } catch (Exception e) {
-            System.out.println(e.getLocalizedMessage());
+            String message = e.getLocalizedMessage();
+            System.out.println(message);
+            resultArea.setText(message);
         }
     }
 
     private String queryString(String title, String author, String from, String to, String types) {
         String query = readLineByLineJava8("Queries/Filter.xq");
+        if (from.isEmpty()) {
+            from = "0";
+        }
+        if (to.isEmpty()) {
+            to = "0";
+        }
         return String.format(query, title, author, from, to, types);
     }
 
@@ -96,12 +110,12 @@ public class FilterController {
         StringBuilder contentBuilder = new StringBuilder();
         try (Stream<String> stream = Files.lines( Paths.get(filePath), StandardCharsets.UTF_8))
         {
-            stream.forEach(s -> contentBuilder.append(s).append("\n"));
+            stream.forEach(s -> contentBuilder.append("\n").append(s));
         }
         catch (IOException e)
         {
             e.printStackTrace();
         }
-        return contentBuilder.toString();
+        return contentBuilder.toString().trim();
     }
 }
