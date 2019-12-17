@@ -10,6 +10,8 @@ public class Updater {
     }
 
     public Result updateTitle(String oldTitle, String newTitle) {
+
+
         String fileLines = dbWorker.readLineByLineJava8("UpdateTitle.xq");
         String query = String.format(fileLines, oldTitle, newTitle);
         return dbWorker.query(query);

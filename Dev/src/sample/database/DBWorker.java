@@ -27,6 +27,8 @@ public class DBWorker {
     static Context context = new Context();
 
     Result query(final String query) {
+        context = new Context();
+
         System.out.println("Start execute:\n" + query);
         try {
             String res = new XQuery(query).execute(context);
@@ -39,6 +41,8 @@ public class DBWorker {
         } catch (Exception e) {
             System.out.println("Executed with error:\n " + e.toString());
             return new Result(Result.Status.ERROR, null, e.toString());
+        }finally {
+            context.close();
         }
     }
 
