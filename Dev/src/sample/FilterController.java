@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import sample.database.Getter;
+import sample.database.Result;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,33 +47,15 @@ public class FilterController {
         String to = toField.getText();
         String types = String.join(",", types());
 
-        String query = queryString(title, author, from, to, types);
-
-        System.out.println(query);
-
-        try {
-            String result = "lpl";// dbGetter.queryResult(query);
-            System.out.println("RESULT:");
-            System.out.println(result);
-
-            resultArea.setText(result);
-
-        } catch (Exception e) {
-            String message = e.getLocalizedMessage();
-            System.out.println(message);
-            resultArea.setText(message);
+        Result result = dbGetter.getFilteredPublications(title, author, from, to, types);
+        if (Result.Status.SUCCESS.equals(result.getStatus())) {
+            resultArea.setText(result.getResult());
+        } else if (Result.Status.ERROR.equals(result.getStatus())) {
+            resultArea.setText(result.getError());
+        } else if (Result.Status.EMPTY.equals(result.getStatus())) {
+            resultArea.setText("Empty result");
         }
-    }
 
-    private String queryString(String title, String author, String from, String to, String types) {
-        String query = ";e;";//dbGetter readLineByLineJava8("Queries/Filter.xq");
-        if (from.isEmpty()) {
-            from = "0";
-        }
-        if (to.isEmpty()) {
-            to = "0";
-        }
-        return String.format(query, title, author, from, to, types);
     }
 
     private List<String> types() {
