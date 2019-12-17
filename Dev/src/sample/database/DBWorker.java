@@ -30,6 +30,7 @@ public class DBWorker {
         System.out.println("Start execute:\n" + query);
         try {
             String res = new XQuery(query).execute(context);
+            context.close();
             if (isBlank(res)) {
                 System.out.println("Empty result!");
                 return new Result(Result.Status.EMPTY, null, null);

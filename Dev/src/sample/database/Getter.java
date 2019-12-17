@@ -31,4 +31,9 @@ public class Getter {
         String fileLines = dbWorker.readLineByLineJava8("GetAuthorsByNumberOfPublications.xq");
         return dbWorker.query(fileLines);
     }
+
+    public Result getPublicationByTitle(String title){
+        String fileLines = dbWorker.readLineByLineJava8("GetPublicationByTitle.xq");
+        return dbWorker.query(String.format(fileLines, title));
+    }
 }
