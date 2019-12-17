@@ -10,10 +10,8 @@ public class Updater {
     }
 
     public Result updateTitle(String oldTitle, String newTitle) {
-        String query = "let $oldTitle := \"" + oldTitle + "\"" +
-                " let $newTitle := \"" + newTitle + "\"" +
-                " let $node := doc('src/resources/xml/dblp.xml')/*/*[./title = $oldTitle]" +
-                " return replace value of node $node/title with $newTitle";
-        return null;
+        String fileLines = dbWorker.readLineByLineJava8("UpdateTitle.xq");
+        String query = String.format(fileLines, oldTitle, newTitle);
+        return dbWorker.query(query);
     }
 }

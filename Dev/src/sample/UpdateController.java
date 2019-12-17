@@ -2,21 +2,16 @@ package sample;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import sample.Utils.*;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import sample.database.DBWorker;
-import sample.database.Getter;
+import sample.database.Updater;
 
-import static sample.Utils.isBlank;
 
 public class UpdateController implements Initializable {
 
-    private final DBWorker dbWorker = new DBWorker();
-    private final Getter getter = new Getter();
+    private final Updater dbUpdater = new Updater();
     //Author textFields
     @FXML
     private TextField deleteAuthorName;
@@ -51,7 +46,7 @@ public class UpdateController implements Initializable {
     }
 
     public void deleteTitleClicked(ActionEvent event) {
-        System.out.println(getter.getAuthorsWithNumberOfPublication());
+        //System.out.println(getter.getAuthorsWithNumberOfPublication());
     }
 
     public void addTitleClicked(ActionEvent event) {
@@ -59,11 +54,9 @@ public class UpdateController implements Initializable {
     }
 
     public void updateTitleClicked(ActionEvent event) {
-        String oldName = mainTitleName.getText();
-        String newName = updateTitleName.getText();
-        if (!isBlank(oldName) && !isBlank(newName)) {
-            //dbWorker.updateTitle(oldName, newName);
-        }
+        String oldTitle = mainTitleName.getText();
+        String newTitle = updateTitleName.getText();
+        dbUpdater.updateTitle(oldTitle, newTitle);
     }
 
     @Override
