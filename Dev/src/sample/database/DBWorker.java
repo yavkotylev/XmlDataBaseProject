@@ -20,7 +20,7 @@ import static sample.Utils.isBlank;
  * @author BaseX Team 2005-19, BSD License
  */
 public class DBWorker {
-    private final String path = "src/resources/queries/";
+    private final String path = "resources/queries/";
     /**
      * Database context.
      */
