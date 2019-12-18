@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="sample.AddController">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Button layoutX="26.0" layoutY="331.0" mnemonicParsing="false" onAction="#addClicked"
+                        prefHeight="27.0" prefWidth="197.0" text="Найти"/>
+                <Label layoutX="38.0" layoutY="34.0" text="Title"/>
+                <CheckBox fx:id="bachelorBox" layoutX="26.0" layoutY="230.0" mnemonicParsing="false"
+                          text="Bachelor Thesis"/>
+                <CheckBox fx:id="masterBox" layoutX="26.0" layoutY="200.0" mnemonicParsing="false"
+                          text="Master Thesis"/>
+                <CheckBox fx:id="articleBox" layoutX="27.0" layoutY="263.0" mnemonicParsing="false" text="Article"/>
+                <CheckBox fx:id="wwwBox" layoutX="26.0" layoutY="296.0" mnemonicParsing="false" text="WWW"/>
+                <BorderPane layoutX="272.0" prefHeight="372.0" prefWidth="355.0">
+                    <center>
+                        <TextArea fx:id="resultArea" prefHeight="200.0" prefWidth="200.0"
+                                  BorderPane.alignment="CENTER"/>
+                    </center>
+                </BorderPane>
+                <Label layoutX="37.0" layoutY="68.0" text="Author"/>
+                <TextField fx:id="titleField" layoutX="86.0" layoutY="29.0"/>
+                <TextField fx:id="authorField" layoutX="86.0" layoutY="63.0"/>
+                <Label layoutX="38.0" layoutY="102.0" text="From"/>
+                <Label layoutX="38.0" layoutY="137.0" text="To"/>
+                <TextField fx:id="fromField" layoutX="86.0" layoutY="97.0"/>
+                <TextField fx:id="toField" layoutX="86.0" layoutY="132.0"/>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
