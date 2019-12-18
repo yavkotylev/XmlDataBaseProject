@@ -7,7 +7,7 @@
     <isbn>1-57398-013-7</isbn>
     <url>http://www.lemis.com/grog/Documentation/Lions/index.html</url>
   </book>
-  <article mdate="2012-02-27" key="persons/CasperGGGHLR12">
+  <phdthesis mdate="2012-02-27" key="persons/CasperGGGHLR12">
     <author>Markus Casper</author>
     <author>Gayane Grigoryan</author>
     <author>Oliver Gronz</author>
@@ -22,8 +22,8 @@
     <year>2012</year>
     <ee>http://dx.doi.org/10.5194/hess-16-409-2012</ee>
     <url>http://dx.doi.org/10.5194/hess-16-409-2012</url>
-  </article>
-  <article mdate="2012-02-20" key="persons/LeyCHM11">
+  </phdthesis>
+  <phdthesis mdate="2012-02-20" key="persons/LeyCHM11">
     <author>Rita Ley</author>
     <author>Markus Casper</author>
     <author>Hugo Hellebrand</author>
@@ -35,8 +35,8 @@
     <year>2011</year>
     <ee>http://dx.doi.org/10.5194/hess-15-2947-2011</ee>
     <url>http://dx.doi.org/10.5194/hess-15-2947-2011</url>
-  </article>
-  <article mdate="2011-04-26" key="journals/cma/He11">
+  </phdthesis>
+  <phdthesis mdate="2011-04-26" key="journals/cma/He11">
     <author>Ji-Huan He</author>
     <title>Asymptotic methods: The next frontier towards nonlinear science.</title>
     <pages>1907-1908</pages>
@@ -46,7 +46,7 @@
     <number>8</number>
     <ee>http://dx.doi.org/10.1016/j.camwa.2011.03.082</ee>
     <url>db/journals/cma/cma61.html#He11</url>
-  </article>
+  </phdthesis>
   <article mdate="2013-12-05" key="journals/cma/BravermanR13">
     <author>Elena Braverman</author>
     <author>Alexandra Rodkina</author>
@@ -901,7 +901,7 @@
     <ee>http://dx.doi.org/10.1016/j.camwa.2011.06.059</ee>
     <url>db/journals/cma/cma62.html#NoorNA11a</url>
   </article>
-  <article mdate="2011-10-17" key="journals/cma/RachaniotisPTD10">
+  <www mdate="2011-10-17" key="journals/cma/RachaniotisPTD10">
     <author>Nikolaos Panagiotis Rachaniotis</author>
     <author>Costas P. Pappis</author>
     <author>G. T. Tsoulfas</author>
@@ -915,8 +915,8 @@
     <number>1</number>
     <ee>http://dx.doi.org/10.1016/j.camwa.2009.07.004</ee>
     <url>db/journals/cma/cma59.html#RachaniotisPTD10</url>
-  </article>
-  <article mdate="2012-11-19" key="journals/cma/Povstenko12">
+  </www>
+  <www mdate="2012-11-19" key="journals/cma/Povstenko12">
     <author>Yuriy Povstenko</author>
     <title>Neumann boundary-value problems for a time-fractional diffusion-wave equation in a half-plane.</title>
     <pages>3183-3192</pages>
@@ -926,8 +926,8 @@
     <number>10</number>
     <ee>http://dx.doi.org/10.1016/j.camwa.2012.02.064</ee>
     <url>db/journals/cma/cma64.html#Povstenko12</url>
-  </article>
-  <article mdate="2010-12-21" key="journals/cma/MarincaH09">
+  </www>
+  <www mdate="2010-12-21" key="journals/cma/MarincaH09">
     <author>Vasile Marinca</author>
     <author>Nicolae Herisanu</author>
     <title>An analytical approach to the dynamic analysis of a rotating electric machine.</title>
@@ -938,7 +938,7 @@
     <number>11-12</number>
     <ee>http://dx.doi.org/10.1016/j.camwa.2009.03.045</ee>
     <url>db/journals/cma/cma58.html#MarincaH09</url>
-  </article>
+  </www>
   <article mdate="2011-08-29" key="journals/cma/TomovskiS11">
     <author>Zivorad Tomovski</author>
     <author>Trifce Sandev</author>
@@ -951,7 +951,7 @@
     <ee>http://dx.doi.org/10.1016/j.camwa.2011.04.042</ee>
     <url>db/journals/cma/cma62.html#TomovskiS11</url>
   </article>
-  <article mdate="2010-12-21" key="journals/cma/KanoB10">
+  <www mdate="2010-12-21" key="journals/cma/KanoB10">
     <author>Patrick O. Kano</author>
     <author>Moysey Brio</author>
     <title>Application of Post's formula to optical pulse propagation in dispersive media.</title>
@@ -962,8 +962,8 @@
     <number>2</number>
     <ee>http://dx.doi.org/10.1016/j.camwa.2009.10.030</ee>
     <url>db/journals/cma/cma59.html#KanoB10</url>
-  </article>
-  <article mdate="2015-01-06" key="journals/cma/CapovillaCFPJR14">
+  </www>
+  <www mdate="2015-01-06" key="journals/cma/CapovillaCFPJR14">
     <author>C. E. Capovilla</author>
     <author>Ivan R. S. Casella</author>
     <author>Alfeu J. Sguarezi Filho</author>
@@ -978,7 +978,7 @@
     <number>12</number>
     <ee>http://dx.doi.org/10.1016/j.camwa.2013.06.030</ee>
     <url>db/journals/cma/cma68.html#CapovillaCFPJR14</url>
-  </article>
+  </www>
   <article mdate="2013-01-25" key="journals/cma/AxelssonBKNW13">
     <author>Owe Axelsson</author>
     <author>Petia T. Boyanova</author>
@@ -15304,5 +15304,10 @@
     <title>Test1</title>
     <author>Test1Author</author>
     <year>1234</year>
+  </article>
+  <article>
+    <title>T</title>
+    <author>T</author>
+    <year>123</year>
   </article>
 </dblp>

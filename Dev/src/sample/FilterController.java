@@ -74,7 +74,7 @@ public class FilterController {
         }
 
         if (masterBox.isSelected()) {
-            types.add("\"mstthesis\"");
+            types.add("\"phdthesis\"");
         }
 
         return types;
