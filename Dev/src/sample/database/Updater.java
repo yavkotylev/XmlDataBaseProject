@@ -9,6 +9,13 @@ public class Updater {
         this.dbWorker = new DBWorker();
     }
 
+    public Result addPublication(String title, String authors, String year) {
+        String fileLines = dbWorker.readLineByLineJava8("AddPublication");
+        String query = String.format(fileLines, title, authors, year);
+        dbWorker.setContextAsWritable();
+        return dbWorker.query(query);
+    }
+
     public Result updateTitle(String oldTitle, String newTitle) {
         String fileLines = dbWorker.readLineByLineJava8("UpdateTitle.xq");
         String query = String.format(fileLines, oldTitle, newTitle);
