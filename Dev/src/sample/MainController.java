@@ -13,7 +13,7 @@ public class MainController {
 
     public void updateClicked(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("../fxml/Update.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Update.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Update");
             stage.setScene(new Scene(root, 1000, 1000));
@@ -27,7 +27,7 @@ public class MainController {
     public void filterClicked(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("../fxml/Filter.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/fxml/Filter.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Search");
             stage.setScene(new Scene(root, 800, 600));
@@ -41,7 +41,7 @@ public class MainController {
     public void topClicked(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("../fxml/Chart.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/fxml/Chart.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Top authors");
             stage.setScene(new Scene(root, 700, 700));
@@ -55,7 +55,7 @@ public class MainController {
     public void addClicked(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("../fxml/Add.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/fxml/Add.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Add");
             stage.setScene(new Scene(root, 700, 700));
