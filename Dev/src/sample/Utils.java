@@ -42,5 +42,17 @@ public class Utils {
         public String getResult() {
             return result;
         }
+
+        public String toString() {
+            if (Utils.Result.Status.SUCCESS.equals(getStatus())) {
+                return getResult();
+            } else if (Utils.Result.Status.ERROR.equals(getStatus())) {
+                return getError();
+            } else if (Utils.Result.Status.EMPTY.equals(getStatus())) {
+                return "Empty result";
+            } else {
+                return "Unknown error";
+            }
+        }
     }
 }

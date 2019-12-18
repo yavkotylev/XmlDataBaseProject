@@ -10,7 +10,7 @@ public class Updater {
     }
 
     public Result addPublication(String title, String authors, String year) {
-        String fileLines = dbWorker.readLineByLineJava8("AddPublication");
+        String fileLines = dbWorker.readLineByLineJava8("AddPublication.xq");
         String query = String.format(fileLines, title, authors, year);
         dbWorker.setContextAsWritable();
         return dbWorker.query(query);

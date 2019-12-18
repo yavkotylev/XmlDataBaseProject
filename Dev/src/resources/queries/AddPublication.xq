@@ -1,5 +1,5 @@
 let $title := "%s"
-let $authors := (%s)
+let $authors := ("%s")
 let $year := %s
 
 let $node := doc("src/resources/xml/dblp.xml")/*
@@ -19,4 +19,6 @@ let $publication := (
 </article>
 )
 
-return insert node $publication into $node
+insert node $publication into $node
+
+return $publication

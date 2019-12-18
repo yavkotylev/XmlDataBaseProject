@@ -57,7 +57,7 @@ public class MainController {
         try {
             root = FXMLLoader.load(getClass().getResource("../fxml/Add.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Top authors");
+            stage.setTitle("Add");
             stage.setScene(new Scene(root, 700, 700));
             stage.show();
         }
