@@ -5,8 +5,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
    <children>
-      <Button layoutX="59.0" layoutY="110.0" mnemonicParsing="false" onAction="#updateClicked" prefHeight="27.0" prefWidth="183.0" text="Update" />
-      <Button layoutX="59.0" layoutY="167.0" mnemonicParsing="false" onAction="#filterClicked" prefHeight="27.0" prefWidth="183.0" text="Filter" />
-      <Button layoutX="59.0" layoutY="226.0" mnemonicParsing="false" onAction="#topClicked" prefHeight="27.0" prefWidth="183.0" text="Top authors" />
+      <Button layoutX="51.0" layoutY="192.0" mnemonicParsing="false" onAction="#addClicked" prefHeight="27.0" prefWidth="183.0" text="Add" />
+      <Button layoutX="51.0" layoutY="144.0" mnemonicParsing="false" onAction="#updateClicked" prefHeight="27.0" prefWidth="183.0" text="Update" />
+      <Button layoutX="51.0" layoutY="60.0" mnemonicParsing="false" onAction="#filterClicked" prefHeight="27.0" prefWidth="183.0" text="Search" />
+      <Button layoutX="51.0" layoutY="99.0" mnemonicParsing="false" onAction="#topClicked" prefHeight="27.0" prefWidth="183.0" text="Top authors" />
    </children>
 </AnchorPane>

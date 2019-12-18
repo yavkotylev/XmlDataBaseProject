@@ -52,4 +52,18 @@ public class MainController {
         }
     }
 
+    public void addClicked(ActionEvent event) {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("../fxml/Add.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Top authors");
+            stage.setScene(new Scene(root, 700, 700));
+            stage.show();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
