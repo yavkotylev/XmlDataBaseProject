@@ -5,10 +5,8 @@ import org.basex.core.*;
 import org.basex.core.cmd.*;
 import sample.Utils.*;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.stream.Stream;
 
 import static sample.Utils.isBlank;
@@ -20,7 +18,7 @@ import static sample.Utils.isBlank;
  * @author BaseX Team 2005-19, BSD License
  */
 public class DBWorker {
-    private final String path = "src/resources/queries/";
+    private final String path = "queries/";
     /**
      * Database context.
      */
@@ -44,9 +42,9 @@ public class DBWorker {
 
     public String readLineByLineJava8(String fileName) {
         StringBuilder contentBuilder = new StringBuilder();
-        try (Stream<String> stream = Files.lines(Paths.get(path + fileName), StandardCharsets.UTF_8)) {
+        try (Stream<String> stream = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(path + fileName))).lines()) {
             stream.forEach(s -> contentBuilder.append("\n").append(s));
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return contentBuilder.toString().trim();

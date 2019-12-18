@@ -1,4 +1,4 @@
-let $authors := doc("src/resources/xml/dblp.xml")/*/*/author
+let $authors := doc("dblp.xml")/*/*/author
 for $author in distinct-values($authors)
   let $count:= count($authors[. = $author])
   order by $count descending

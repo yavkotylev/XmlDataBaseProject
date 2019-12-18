@@ -4,7 +4,7 @@ let $from := %s
 let $to := %s
 let $types := (%s)
 
-let $items := (for $item in doc("src/resources/xml/dblp.xml")/*/*
+let $items := (for $item in doc("dblp.xml")/*/*
 where 
   ($item/name() = $types or empty($types)) and
   ($item/author/text()[contains(.,$author)] or $author = "") and
