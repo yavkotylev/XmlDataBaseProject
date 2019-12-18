@@ -16,7 +16,7 @@ public class MainController {
             Parent root = FXMLLoader.load(getClass().getResource("../fxml/Update.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Update");
-            stage.setScene(new Scene(root, 600, 600));
+            stage.setScene(new Scene(root, 1000, 1000));
             stage.show();
         }
         catch (IOException e) {
@@ -29,8 +29,8 @@ public class MainController {
         try {
             root = FXMLLoader.load(getClass().getResource("../fxml/Filter.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Filter");
-            stage.setScene(new Scene(root, 600, 600));
+            stage.setTitle("Search");
+            stage.setScene(new Scene(root, 800, 600));
             stage.show();
         }
         catch (IOException e) {

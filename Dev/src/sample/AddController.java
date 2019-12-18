@@ -35,7 +35,7 @@ public class AddController {
         Utils.Result result = updater.addPublication(title, authors, year);
 
         if (Utils.Result.Status.EMPTY.equals(result.getStatus())) {
-            resultArea.setText(result.toString());
+            resultArea.setText("Publication is added");
         } else {
             resultArea.setText(result.toString());
         }
