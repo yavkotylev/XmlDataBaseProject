@@ -33,6 +33,11 @@ public class AddController {
         }
 
         Utils.Result result = updater.addPublication(title, authors, year);
-        resultArea.setText(result.toString());
+
+        if (Utils.Result.Status.EMPTY.equals(result.getStatus())) {
+            resultArea.setText(result.toString());
+        } else {
+            resultArea.setText(result.toString());
+        }
     }
 }
